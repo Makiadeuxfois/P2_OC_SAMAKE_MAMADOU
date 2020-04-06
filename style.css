@@ -1,0 +1,235 @@
+/*     CSS GENERAL */
+@font-face {
+	font-family: 'FreeMono';
+	src: url('gnu.font/FreeMono.ttf');
+	src: url('gnu.font/FreeMonoBold.ttf');
+}
+
+
+*
+{
+	font-family: 'FreeMono';
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+h2
+{
+	text-transform: uppercase;
+}
+
+.contact, .about, .fun, .formation, .exp, .recommandations
+
+{
+	margin-bottom: 5%;
+}
+
+.contact, .about, .fun
+{
+	text-align: center;
+}
+
+.contact-list, .about-text-1, .about-text-2, .about-text-3
+{
+	margin-bottom: 3%;
+	text-align: center;
+}
+
+
+
+
+/*                 GRID SYSTEM              */
+
+.container 
+{
+	display: grid;
+	grid-template-rows: 440px 1fr 50px;
+	grid-template-columns: 4fr 6fr;
+	grid-template-areas: 
+	"header header"
+	"leftside rightside"
+	"footer footer"
+}
+
+
+.header 
+{
+    grid-area: header;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    background-color: #384967;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+h1
+{
+	grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    margin-left: 40%;
+    margin-top: 20%;
+	font-size: 45px;
+	color: #FFF;
+}
+
+.subtitle 
+{
+	grid-row-start: 1;
+    grid-column-start: 2;
+	font-size: 24px;
+	color: #FFF;
+	margin-left: 41%;
+    margin-top: 27%;
+}
+
+
+.nav-list 
+{
+	position: absolute;
+    top: 0%;
+    right: 5%;
+    display: flex;
+}
+
+.nav-list li
+{
+	margin-top: 5%;
+	margin-right: 5%;
+}
+
+.nav-list a 
+{
+	text-decoration: none;
+	color: #FFF;
+	font-size: 18px;
+}
+
+
+
+#left-side
+{
+	grid-area: leftside;
+	background-color: rgb(125,147,138, 0.2);
+	padding: 5% 5%;
+}
+
+.fun-icons
+{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#right-side 
+{
+	grid-area: rightside;
+	padding: 3% 10%;
+}
+
+.formation-title, .experience-title, .recommandations-title
+{
+	display: flex;
+}
+
+.fa-graduation-cap, .fa-briefcase, .fa-address-card
+
+{
+	padding-right: 5%;
+}
+
+.formation-text 
+{
+	margin-bottom: 5%;
+}
+
+
+.exp-list 
+{
+	margin-bottom: 3%;
+}
+
+.recommandations-box 
+{
+	display: flex;
+    justify-content: space-evenly;
+}
+
+
+.footer
+{
+	grid-area: footer;
+	background-color: #384967;
+}
+
+
+
+
+
+/*          MEDIA QUERIES           */
+
+
+
+@media screen and (max-width: 1325px) {
+
+	
+	.container {
+		display: flex;
+    	flex-direction: column;
+	}
+
+	.header {
+		height: 250px;
+		display: grid;
+    	grid-template-columns: 1fr 2fr 1fr;
+    	grid-template-rows: 1fr 1fr 1fr 1fr;
+	}
+
+	img {
+		display: none;
+	}
+
+	h1 {
+    	grid-row-start: 1;
+    	grid-column-start: 2;
+    	margin-left: 24%;
+    	margin-top: 20%;
+    	font-size: 35px;
+	}
+
+	.subtitle {
+	    grid-row-start: 2;
+	    margin-left: 25%;
+	    margin-top: 1%;
+	}
+
+	#right-side {
+		text-align: center;
+	}
+
+	.formation-title, .experience-title, .recommandations-title {
+		justify-content: center;
+	}
+
+}
+
+
+
+@media screen and (max-width: 400px) {
+
+	.nav-list {
+		right: 2%;
+    	display: inline;
+	}
+
+
+	h1 {
+		grid-row-start: 3;
+	}
+
+	.subtitle {
+		display: none;
+	}
+}
